@@ -74,6 +74,9 @@ export default {
           950: 'var(--accent-950)',
         },
       },
+      spacing: {
+        '18': '4.5rem',
+      },
     },
     screens: {
       xs: "480px",
