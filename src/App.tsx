@@ -1,3 +1,5 @@
+import About from './components/About';
+import Contact from './components/Contact';
 import IntroSection from './components/IntroSection';
 import Navbar from './components/Navbar';
 import Skills from './components/Skills';
@@ -8,6 +10,8 @@ function App() {
       <Navbar />
       <IntroSection />
       <Skills />
+      <About />
+      <Contact />
     </div>
   );
 }

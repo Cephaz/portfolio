@@ -1,0 +1,18 @@
+.card-image {
+  display: block;
+  min-height: 20rem;
+  background: center center no-repeat;
+  background-size: cover;
+  filter: blur(3px);
+}
+
+.card-image > img {
+  display: block;
+  width: 100%;
+  opacity: 0;
+}
+
+.card-image.is-loaded {
+  filter: none;
+  transition: filter 1s;
+}
