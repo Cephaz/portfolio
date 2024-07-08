@@ -7,7 +7,7 @@ import VeilleJPG from '../../assets/veille_technique.jpg';
 const about = [
   { image: VoyageJPG, title: 'Photographie', description: 'Créativité' },
   { image: BasketJPG, title: 'Basket', description: "Esprit d'équipe" },
-  { image: EscaladeJPG, title: 'Escalade', description: 'Perfomance' },
+  { image: EscaladeJPG, title: 'Escalade', description: 'Performance' },
   { image: VeilleJPG, title: 'Veille technique', description: 'Curiosité' },
 ];
 
