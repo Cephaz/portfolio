@@ -51,7 +51,6 @@ const IntroSection = () => {
           />
           <div className="rounded-full bg-primary-500 blur-3xl w-64 h-64 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0"></div>
         </div>
-
       </div>
 
       <div className="flex flex-row text-5xl px-12 md:px-0 w-full justify-center items-center py-24">

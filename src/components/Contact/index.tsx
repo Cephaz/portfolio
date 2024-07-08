@@ -21,7 +21,11 @@ const Contact = () => {
 
           <div className="relative w-64 h-10 rounded-lg overflow-hidden justify-center my-4 py-10 font-semibold text-xl border-primary-500">
             <div className="absolute inset-0 bg-primary-500 transform -skew-y-12 -translate-x-8 translate-y-2 blur-md opacity-50"></div>
-            <a href="mailto:pierrezhoou@gmail.com" target="_blank" className="relative z-10 flex items-center justify-center h-full text-primary-950">
+            <a
+              href="mailto:pierrezhoou@gmail.com"
+              target="_blank"
+              className="relative z-10 flex items-center justify-center h-full text-primary-950"
+            >
               Contactez-moi !
             </a>
           </div>
