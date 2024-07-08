@@ -15,11 +15,10 @@ services:
     ports:
       - "80:80"
       - "443:443"
+      - "8080:8080"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
       - "./letsencrypt:/letsencrypt"
-    networks:
-      - traefik_default
 
   react-app:
     build:
@@ -31,9 +30,6 @@ services:
       - "traefik.http.routers.react-app.rule=Host(`pierrezhou.dev`)"
       - "traefik.http.routers.react-app.entrypoints=websecure"
       - "traefik.http.routers.react-app.tls=true"
-    networks:
-      - traefik_default
-
-networks:
-  traefik_default:
-    external: true
+      - "traefik.http.services.app.loadbalancer.server.port=4173"
+    volumes:
+      - .:/app
