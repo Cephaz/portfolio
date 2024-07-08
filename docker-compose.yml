@@ -8,18 +8,32 @@ services:
       - "--providers.docker=true"
       - "--entrypoints.web.address=:80"
       - "--entrypoints.websecure.address=:443"
+      - "--certificatesResolvers.le.acme.email=pierrezhoou@gmail.com"
+      - "--certificatesResolvers.le.acme.storage=/letsencrypt/acme.json"
+      - "--certificatesResolvers.le.acme.httpChallenge.entryPoint=web"
+      - "--certificatesResolvers.le.acme.tlsChallenge=true"
     ports:
       - "80:80"
       - "443:443"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
+      - "./letsencrypt:/letsencrypt"
+    networks:
+      - traefik_default
 
   react-app:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: react-app
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.react-app.rule=Host(`pierrezhou.dev`)"
       - "traefik.http.routers.react-app.entrypoints=websecure"
+      - "traefik.http.routers.react-app.tls=true"
     networks:
-      - default
+      - traefik_default
+
+networks:
+  traefik_default:
+    external: true
